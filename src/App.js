@@ -1,38 +1,28 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import React from "react";
+import { Root } from "native-base";
+import { StackNavigator, DrawerNavigator } from "react-navigation";
 
-import React, { Component } from 'react';
-import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
-export default class FooterTabsIconTextExample extends Component {
-  render() {
-    return (
-      <Container>
-        <Header />
-        <Content />
-        <Footer>
-          <FooterTab>
-            <Button vertical>
-              <Icon name="apps" />
-              <Text>Apps</Text>
-            </Button>
-            <Button vertical>
-              <Icon name="camera" />
-              <Text>Camera</Text>
-            </Button>
-            <Button vertical active>
-              <Icon active name="navigate" />
-              <Text>Navigate</Text>
-            </Button>
-            <Button vertical>
-              <Icon name="person" />
-              <Text>Contact</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
-    );
+import Home from "./screens/home/";
+import Index from "./screens/tabcontrols/index";
+import Discovery from "./screens/tabcontrols/discovery";
+import Message from "./screens/tabcontrols/message";
+import Profile from "./screens/tabcontrols/profile";
+
+const AppNavigator = StackNavigator(
+  {
+    Home: { screen: Home },
+    Index: { screen: Index },
+    Discovery: { screen: Discovery },
+    Message: { screen: Message },
+    Profile: { screen: Profile }
+  },
+  {
+    initialRouteName: "Home",
+    headerMode: "none"
   }
-}
+);
+
+export default () =>
+  <Root>
+    <AppNavigator />
+  </Root>;
