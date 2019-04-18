@@ -3,12 +3,11 @@
 ------
 
 
-
 - forward:  PC->Phone 作为Client客户端,可以任意访问Phone上的 Server 服务器        
 
-​	adb forward tcp:8888 tcp:8888    
+ ​	adb forward tcp:8888 tcp:8888    
 
-​        
+ ​      
 
 - reverse:反向代理  
 
@@ -22,14 +21,12 @@
   adb devices
 
 
-
 - bundle 
 
   8081端口的服务就是React Native项目的一个本地服务器，用于提供JSBundle包和一些静态资源
 
   React-native bundle --platform Android --dev false --entry-file index.
   .js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
-
 
 
 - 模拟器
@@ -41,7 +38,6 @@
   adb shell input keyevent 82   ( http://192.168.1.60:8097/ )
 
   
-
 - npm 错误
 
   npm install时报错Maximum call stack size exceeded 
@@ -49,7 +45,6 @@
   降级 ： npm install -g npm@5.4.0
   升级 ： npm install -g npm  
 
-  
 
 - react-native   版本
   npm info react-native
