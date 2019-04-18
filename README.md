@@ -5,9 +5,8 @@
 
 - forward:  PC->Phone 作为Client客户端,可以任意访问Phone上的 Server 服务器        
 
- ​	adb forward tcp:8888 tcp:8888    
+  ​	adb forward tcp:8888 tcp:8888    
 
- ​      
 
 - reverse:反向代理  
 
